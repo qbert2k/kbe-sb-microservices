@@ -10,3 +10,11 @@ You can access the API documentation [here](https://sfg-beer-works.github.io/bre
 * Like Spring Framework Guru on [Facebook](https://www.facebook.com/springframeworkguru/)
 * Follow Spring Framework Guru on [Twitter](https://twitter.com/spring_guru)
 * Connect with John Thompson on [LinkedIn](http://www.linkedin.com/in/springguru)
+
+## Running Services Via Docker Compose
+
+```shell
+docker compose -f compose-local.yaml up -d
+
+docker compose -f compose-local.yaml down
+```
