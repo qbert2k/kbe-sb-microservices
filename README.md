@@ -32,3 +32,15 @@ kubectl apply -f mysql-service.yml
 
 kubectl get all
 ```
+
+### JMS Service
+
+```shell
+kubectl create deployment jms --image=vromeo/activemq-artemis --dry-run=client -o=yaml > jms-deployment.yml
+kubectl apply -f jms-deployment.yml
+
+kubectl create service clusterip jms --tcp=8161:8161 --tcp=61616:61616 --dry-run=client -o=yaml > jms-service.yml
+kubectl apply -f jms-service.yml
+
+kubectl get all
+```

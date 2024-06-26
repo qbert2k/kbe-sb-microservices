@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app: jms
-  strategy: {}
+  strategy: { }
   template:
     metadata:
       creationTimestamp: null
@@ -18,7 +18,7 @@ spec:
         app: jms
     spec:
       containers:
-      - image: vromero/activemq-artemis
-        name: activemq-artemis
-        resources: {}
-status: {}
+        - image: vromero/activemq-artemis
+          name: activemq-artemis
+          resources: { }
+status: { }

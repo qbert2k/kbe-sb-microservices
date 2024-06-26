@@ -7,16 +7,16 @@ metadata:
   name: jms
 spec:
   ports:
-  - name: 8161-8161
-    port: 8161
-    protocol: TCP
-    targetPort: 8161
-  - name: 61616-61616
-    port: 61616
-    protocol: TCP
-    targetPort: 61616
+    - name: 8161-8161
+      port: 8161
+      protocol: TCP
+      targetPort: 8161
+    - name: 61616-61616
+      port: 61616
+      protocol: TCP
+      targetPort: 61616
   selector:
     app: jms
   type: ClusterIP
 status:
-  loadBalancer: {}
+  loadBalancer: { }
