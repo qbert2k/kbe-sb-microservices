@@ -51,8 +51,8 @@ kubectl get all
 kubectl create deployment inventory-service --image=springframeworkguru/kbe-brewery-inventory-service --dry-run=client -o=yaml > inventory-deployment.yml
 kubectl apply -f inventory-deployment.yml
 
-kubectl create service clusterip inventory-service --tcp=8082:8082 --dry-run=client -o=yaml > inventory-service.yaml
-kubectl apply -f inventory-service.yaml
+kubectl create service clusterip inventory-service --tcp=8082:8082 --dry-run=client -o=yaml > inventory-service.yml
+kubectl apply -f inventory-service.yml
 
 kubectl get all
 ```
@@ -63,8 +63,20 @@ kubectl get all
 kubectl create deployment inventory-failover --image=springframeworkguru/kbe-brewery-inventory-failover --dry-run=client -o=yaml > inventory-failover-deployment.yml
 kubectl apply -f inventory-failover-deployment.yml
 
-kubectl create service clusterip inventory-failover --tcp=8083:8083 --dry-run=client -o=yaml > inventory-failover-service.yaml
+kubectl create service clusterip inventory-failover --tcp=8083:8083 --dry-run=client -o=yaml > inventory-failover-service.yml
 kubectl apply -f inventory-failover-service.yml
+
+kubectl get all
+```
+
+### Beer Service
+
+```shell
+kubectl create deployment beer-service --image=springframeworkguru/kbe-brewery-beer-service --dry-run=client -o=yaml > beer-service-deployment.yml
+kubectl apply -f beer-service-deployment.yml
+
+kubectl create service clusterip beer-service --tcp=8080:8080 --dry-run=client -o=yaml > beer-service.yml
+kubectl apply -f beer-service.yml
 
 kubectl get all
 ```
