@@ -56,3 +56,15 @@ kubectl apply -f inventory-service.yaml
 
 kubectl get all
 ```
+
+### Inventory Failover Service
+
+```shell
+kubectl create deployment inventory-failover --image=springframeworkguru/kbe-brewery-inventory-failover --dry-run=client -o=yaml > inventory-failover-deployment.yml
+kubectl apply -f inventory-failover-deployment.yml
+
+kubectl create service clusterip inventory-failover --tcp=8083:8083 --dry-run=client -o=yaml > inventory-failover-service.yaml
+kubectl apply -f inventory-failover-service.yml
+
+kubectl get all
+```

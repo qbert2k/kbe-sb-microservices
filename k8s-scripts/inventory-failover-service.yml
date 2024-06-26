@@ -7,12 +7,12 @@ metadata:
   name: inventory-failover
 spec:
   ports:
-  - name: 8083-8083
-    port: 8083
-    protocol: TCP
-    targetPort: 8083
+    - name: 8083-8083
+      port: 8083
+      protocol: TCP
+      targetPort: 8083
   selector:
     app: inventory-failover
   type: ClusterIP
 status:
-  loadBalancer: {}
+  loadBalancer: { }
