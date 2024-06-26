@@ -18,3 +18,17 @@ docker compose -f compose-local.yaml up -d
 
 docker compose -f compose-local.yaml down
 ```
+
+## Infrastructure Services
+
+### MySQL Service
+
+```shell
+kubectl create deployment mysql --image=mysql:5.7 --dry-run=client -o=yaml > mysql-deployment.yml
+kubectl apply -f mysql-deployment.yml
+
+kubectl create service clusterip mysql --tcp=3306:3306 --dry-run=client -o=yaml > mysql-service.yml
+kubectl apply -f mysql-service.yml
+
+kubectl get all
+```

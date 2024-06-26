@@ -31,7 +31,7 @@ services:
         ports:
             - 8161:8161
             - 61616:61616
-    inventory-service:
+    inventory:
         image: springframeworkguru/kbe-brewery-inventory-service
         ports:
             - 8082:8082
@@ -56,7 +56,7 @@ services:
         ports:
             - 8080:8080
         depends_on:
-            - inventory-service
+            - inventory
             - jms
         restart: on-failure
         environment:
@@ -92,7 +92,7 @@ services:
         ports:
             - 9090:9090
         depends_on:
-            - inventory-service
+            - inventory
             - beer-service
             - order-service
             - inventory-failover
