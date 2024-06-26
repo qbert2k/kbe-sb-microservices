@@ -44,3 +44,15 @@ kubectl apply -f jms-service.yml
 
 kubectl get all
 ```
+
+### Inventory Service
+
+```shell
+kubectl create deployment inventory-service --image=springframeworkguru/kbe-brewery-inventory-service --dry-run=client -o=yaml > inventory-deployment.yml
+kubectl apply -f inventory-deployment.yml
+
+kubectl create service clusterip inventory-service --tcp=8082:8082 --dry-run=client -o=yaml > inventory-service.yaml
+kubectl apply -f inventory-service.yaml
+
+kubectl get all
+```

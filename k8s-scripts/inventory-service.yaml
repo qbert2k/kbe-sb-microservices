@@ -7,12 +7,12 @@ metadata:
   name: inventory-service
 spec:
   ports:
-  - name: 8082-8082
-    port: 8082
-    protocol: TCP
-    targetPort: 8082
+    - name: 8082-8082
+      port: 8082
+      protocol: TCP
+      targetPort: 8082
   selector:
     app: inventory-service
   type: ClusterIP
 status:
-  loadBalancer: {}
+  loadBalancer: { }
