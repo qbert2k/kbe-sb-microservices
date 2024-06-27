@@ -92,3 +92,11 @@ kubectl apply -f order-service.yml
 
 kubectl get all
 ```
+
+### Readiness and Liveness Probe Configuration
+
+```shell
+kubectl apply -f inventory-deployment.yml
+kubectl apply -f order-service-deployment.yml
+kubectl apply -f beer-service-deployment.yml
+```
