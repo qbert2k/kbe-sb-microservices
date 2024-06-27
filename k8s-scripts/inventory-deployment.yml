@@ -43,8 +43,8 @@ spec:
               value: "true"
             - name: MANAGEMENT_HEALTH_LIVENESSSTATE_ENABLED
               value: "true"
-#            - name: SERVER_SHUTDOWN
-#              value: "graceful"
+            - name: SERVER_SHUTDOWN
+              value: "graceful"
           readinessProbe:
             httpGet:
               port: 8082
@@ -53,10 +53,10 @@ spec:
             httpGet:
               port: 8082
               path: /actuator/health/liveness
-#          lifecycle:
-#            preStop:
-#              exec:
-#                command: [ "sh", "-c", "sleep 10" ]
+          lifecycle:
+            preStop:
+              exec:
+                command: [ "sh", "-c", "sleep 10" ]
 status: { }
 
 

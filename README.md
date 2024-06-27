@@ -99,4 +99,16 @@ kubectl get all
 kubectl apply -f inventory-deployment.yml
 kubectl apply -f order-service-deployment.yml
 kubectl apply -f beer-service-deployment.yml
+
+kubectl get all
+```
+
+### Configure Graceful Shutdown
+
+```shell
+kubectl apply -f inventory-deployment.yml
+kubectl apply -f order-service-deployment.yml
+kubectl apply -f beer-service-deployment.yml
+
+kubectl get all
 ```
