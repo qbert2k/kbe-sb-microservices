@@ -80,3 +80,15 @@ kubectl apply -f beer-service.yml
 
 kubectl get all
 ```
+
+### Order Service
+
+```shell
+kubectl create deployment order-service --image=springframeworkguru/kbe-brewery-order-service --dry-run=client -o=yaml > order-service-deployment.yml
+kubectl apply -f order-service-deployment.yml
+
+kubectl create service clusterip order-service --tcp=8081:8081 --dry-run=client -o=yaml > order-service.yml
+kubectl apply -f order-service.yml
+
+kubectl get all
+```
