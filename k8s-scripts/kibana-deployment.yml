@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app: kibana
-  strategy: {}
+  strategy: { }
   template:
     metadata:
       creationTimestamp: null
@@ -18,7 +18,7 @@ spec:
         app: kibana
     spec:
       containers:
-      - image: docker.elastic.co/kibana/kibana:7.12.1
-        name: kibana
-        resources: {}
-status: {}
+        - image: docker.elastic.co/kibana/kibana:7.12.1
+          name: kibana
+          resources: { }
+status: { }

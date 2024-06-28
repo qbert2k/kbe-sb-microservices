@@ -141,3 +141,13 @@ kubectl apply -f elasticsearch-deployment.yml
 kubectl create service clusterip elasticsearch --tcp=9200:9200 --dry-run=client -o=yaml > elasticsearch-service.yml
 kubectl apply -f elasticsearch-service.yml
 ```
+
+#### Kibana Configuration
+
+```shell
+kubectl create deployment kibana --image=docker.elastic.co/kibana/kibana:7.12.1 --dry-run=client -o=yaml > kibaja-deployment.yml
+kubectl apply -f kibana-deployment.yml
+
+kubectl create service nodeport kibana --tcp=5601:5601 --dry-run=client -o=yaml > kibana-service.yml
+kubectl apply -f kibana-service.yml
+```
