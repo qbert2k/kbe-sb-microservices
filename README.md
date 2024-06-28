@@ -122,3 +122,10 @@ kubectl apply -f gateway-deployment.yml
 kubectl create service nodeport gateway --tcp=9090:9090 --dry-run=client -o=yaml > gateway-service.yml
 kubectl apply -f gateway-service.yml
 ```
+
+### Deleting Services and Deployments
+
+```shell
+kubectl delete -f gateway-service.yml
+kubectl delete -f gateway-deployment.yml
+```
