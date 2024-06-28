@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app: gateway
-  strategy: {}
+  strategy: { }
   template:
     metadata:
       creationTimestamp: null
@@ -18,7 +18,7 @@ spec:
         app: gateway
     spec:
       containers:
-      - image: springframeworkguru/kbe-brewery-gateway
-        name: kbe-brewery-gateway
-        resources: {}
-status: {}
+        - image: springframeworkguru/kbe-brewery-gateway
+          name: kbe-brewery-gateway
+          resources: { }
+status: { }

@@ -112,3 +112,13 @@ kubectl apply -f beer-service-deployment.yml
 
 kubectl get all
 ```
+
+### Spring Cloud Gateway Service
+
+```shell
+kubectl create deployment gateway --image=springframeworkguru/kbe-brewery-gateway --dry-run=client -o=yaml > gateway-deployment.yml
+kubectl apply -f gateway-deployment.yml
+
+kubectl create service nodeport gateway --tcp=9090:9090 --dry-run=client -o=yaml > gateway-service.yml
+kubectl apply -f gateway-service.yml
+```
