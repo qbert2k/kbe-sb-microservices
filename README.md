@@ -129,3 +129,15 @@ kubectl apply -f gateway-service.yml
 kubectl delete -f gateway-service.yml
 kubectl delete -f gateway-deployment.yml
 ```
+
+### Consolidated Logging with ELK Stack
+
+#### Elasticsearch Configuration
+
+```shell
+kubectl create deployment elasticsearch --image=docker.elastic.co/elasticsearch/elasticsearch:7.12.1 --dry-run=client -o=yaml > elasticsearch-deployment.yml
+kubectl apply -f elasticsearch-deployment.yml
+
+kubectl create service clusterip elasticsearch --tcp=9200:9200 --dry-run=client -o=yaml > elasticsearch-service.yml
+kubectl apply -f elasticsearch-service.yml
+```
