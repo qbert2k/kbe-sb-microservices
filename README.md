@@ -150,4 +150,20 @@ kubectl apply -f kibana-deployment.yml
 
 kubectl create service nodeport kibana --tcp=5601:5601 --dry-run=client -o=yaml > kibana-service.yml
 kubectl apply -f kibana-service.yml
+
+kubectl delete -f kibana-service.yml
+kubectl delete -f kibana-deployment.yml
+kubectl apply -f kibana-deployment.yml
+kubectl apply -f kibana-service.yml
+```
+
+#### Filebeat Configuration
+
+```shell
+kubectl apply -f filebeat-kubernetes.yaml
+kubectl apply -f inventory-deployment.yml
+kubectl apply -f order-service-deployment.yml
+kubectl apply -f beer-service-deployment.yml
+
+kubectl get services
 ```
